@@ -11,6 +11,14 @@ function AddMovie(props) {
     event.preventDefault();
 
     // could add validation here...
+    if (
+      titleRef.current.value.trim() === '' ||
+      openingTextRef.current.value.trim() === '' ||
+      releaseDateRef.current.value.trim() === ''
+    ) {
+      alert('Add values to the input fields!');
+      return;
+    }
 
     const movie = {
       title: titleRef.current.value,
